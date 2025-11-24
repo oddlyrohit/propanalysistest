@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: microburbs-app
+    ports:
+      - "5001:5001"
+    environment:
+      # Flask Configuration
+      - FLASK_ENV=production
+      - FLASK_DEBUG=False
+      - PORT=5001
+      
+      # Microburbs API Configuration
+      - MICROBURBS_API_BASE_URL=https://www.microburbs.com.au/report_generator/api
+      - MICROBURBS_API_TOKEN=${MICROBURBS_API_TOKEN:-test}
+      
+      # Application Settings
+      - USE_MOCK_DATA=False
+      - API_TIMEOUT=10
+      - LOG_LEVEL=INFO
+      
+      # Python
+      - PYTHONUNBUFFERED=1
+    
+    restart: unless-stopped
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/api/suburbs/search?q=test"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    labels:
+      - "com.microburbs.description=Real Estate Property Analysis AI Agent"
+      - "com.microburbs.version=1.0.0"
+
