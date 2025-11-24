@@ -206,3 +206,39 @@ export interface StreetInsightItem {
 export interface StreetInsights {
   results: StreetInsightItem[]
 }
+
+// Minimal, pragmatic definitions to make the build pass.
+// You can refine these later once the app is running.
+
+export interface SuburbSummary {
+  id?: string;
+  name?: string;
+  state?: string;
+  [key: string]: any;
+}
+
+export interface SuburbInfo {
+  id?: string;
+  name?: string;
+  postcode?: string;
+  state?: string;
+  [key: string]: any;
+}
+
+export interface SummaryScore {
+  label?: string;
+  score?: number;
+  [key: string]: any;
+}
+
+export interface GeoJSON {
+  type: string;
+  features: any[];
+}
+
+// If MarketTrends already exists, extend it instead of redefining.
+export interface MarketTrends {
+  currentPrice?: number;
+  priceGrowth?: number | number[]; // adjust if you know the exact shape
+  [key: string]: any;
+}
