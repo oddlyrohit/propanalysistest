@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { TrendingUp, Home, DollarSign, ArrowUpDown, ArrowUp, ArrowDown } from "lucide-react"
+import { TrendingUp, Home, DollarSign, ArrowUp, ArrowDown } from "lucide-react"
 import {
   Card,
   CardContent,
