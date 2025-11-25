@@ -49,6 +49,10 @@ export interface MarketTrends {
   quarterlyGrowth: number
   rentalYield: number
   daysOnMarket: number
+  // Extended properties for API compatibility
+  currentPrice?: number
+  priceGrowth?: number | number[]
+  [key: string]: any
 }
 
 // Real Microburbs API School Data (from real API)
@@ -233,12 +237,10 @@ export interface SummaryScore {
 
 export interface GeoJSON {
   type: string;
-  features: any[];
-}
-
-// If MarketTrends already exists, extend it instead of redefining.
-export interface MarketTrends {
-  currentPrice?: number;
-  priceGrowth?: number | number[]; // adjust if you know the exact shape
+  features?: any[];
+  coordinates?: number[][][] | number[][][][];
   [key: string]: any;
 }
+
+// Extended MarketTrends properties (merged with main definition above)
+// The main MarketTrends interface at line 47 now contains all required properties
