@@ -1,4 +1,4 @@
-interface MicroburbsLogoProps {
+interface PropertyScapeLogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl'
   showText?: boolean
   textSize?: string
@@ -18,15 +18,15 @@ const textSizeMap = {
   xl: 'text-5xl'
 }
 
-export function MicroburbsLogo({ size = 'md', showText = true, textSize }: MicroburbsLogoProps) {
+export function PropertyScapeLogo({ size = 'md', showText = true, textSize }: PropertyScapeLogoProps) {
   const displayTextSize = textSize || textSizeMap[size]
-  
+
   return (
     <div className="inline-flex items-center gap-2 justify-center">
-      <svg 
-        className={sizeMap[size]} 
-        viewBox="0 0 100 100" 
-        fill="none" 
+      <svg
+        className={sizeMap[size]}
+        viewBox="0 0 100 100"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         {/* House body */}
@@ -40,10 +40,9 @@ export function MicroburbsLogo({ size = 'md', showText = true, textSize }: Micro
       </svg>
       {showText && (
         <span className={`${displayTextSize} font-semibold text-primary whitespace-nowrap`}>
-          Microburbs
+          PropertyScope
         </span>
       )}
     </div>
   )
 }
-

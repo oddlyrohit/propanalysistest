@@ -11,7 +11,7 @@ import { MarketTrendsChart } from "@/components/market-trends-chart"
 import { SchoolsList } from "@/components/schools-list"
 import { DevelopmentList } from "@/components/development-list"
 import { SuburbMap } from "@/components/suburb-map"
-import { MicroburbsLogo } from "@/components/microburbs-logo"
+import { PropertyScapeLogo } from "@/components/propertyscape-logo"
 import { StreetRankingsTable } from "@/components/street-rankings-table"
 import { LiveabilityScores } from "@/components/liveability-scores"
 import * as SuburbsApi from "@/api/suburbs"
@@ -173,7 +173,7 @@ function App() {
         <header className="py-4">
           <div className="container mx-auto px-4">
             <button onClick={handleLogoClick} className="hover:opacity-75 transition-opacity">
-              <MicroburbsLogo size="lg" />
+              <PropertyScapeLogo size="lg" />
             </button>
           </div>
         </header>
@@ -182,7 +182,7 @@ function App() {
           <div className="w-full max-w-3xl -mt-24">
             <div className="text-center mb-12">
               <div className="mb-8">
-                <MicroburbsLogo size="xl" textSize="text-5xl font-normal" />
+                <PropertyScapeLogo size="xl" textSize="text-5xl font-normal" />
               </div>
             </div>
 
@@ -236,8 +236,8 @@ function App() {
 
         <footer className="py-4">
           <div className="container mx-auto px-4 text-center text-xs text-muted-foreground space-y-1">
-            <p>Australian Suburb Analysis Platform</p>
-            <p className="text-muted-foreground/60">Powered by Microburbs</p>
+            <p>PropertyScope Suburbs Analysis</p>
+            <p className="text-muted-foreground/60">Australian Suburb Analysis Platform</p>
           </div>
         </footer>
       </div>
@@ -253,7 +253,7 @@ function App() {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center gap-6">
             <button onClick={handleLogoClick} className="hover:opacity-75 transition-opacity flex-shrink-0">
-              <MicroburbsLogo size="md" />
+              <PropertyScapeLogo size="md" />
             </button>
 
             <div className="flex-1 max-w-2xl">
